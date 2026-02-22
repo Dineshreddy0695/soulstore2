@@ -1,0 +1,229 @@
+ if (username === 'admin' && password === 'password') {
+    return { success: true, message: 'Login successful' };
+  } else {
+    return { success: false, message: 'Invalid credentials' };
+
+
+
+
+
+    <div className="  grid-cols-4 grid  w-auto justify-center font-serif   gap-20">
+
+
+        <div className="flex h-10 flex-col hover:transition-all hover:-translate-y-1 shadow-2xl">
+          
+
+          <Link to="/mens/hoodie">
+            <button  className=" bg-amber-600 w-40 overflow-hidden" >
+              <div>mens shirt</div>
+            </button>
+          </Link>
+        </div>
+
+
+        <div className="flex  h-10 flex-col hover:transition-all hover:-translate-y-1 shadow-2xl">
+         
+          <Link to="/mens/trousers"><button className="h-10 bg-amber-600 w-40 overflow-hidden">
+          <div>mens trousers</div>
+          </button></Link>
+          
+        </div>
+
+        <div className="flex h-10 flex-col hover:transition-all hover:-translate-y-1 shadow-2xl">
+
+          <button className="h-10 bg-amber-600 w-40 overflow-hidden">
+                    <div>mens t-shirts</div>
+          </button>
+        </div>
+
+        <div className="flex  flex-col hover:transition-all hover:-translate-y-1 shadow-2xl">
+
+
+          <Link to="/mens/hoodie">
+            <button  className="h-10 bg-amber-600 w-40 overflow-hidden">
+                       <div>mens hoodie</div>
+            </button>
+          </Link>
+        </div>
+        <div className="flex  flex-col hover:transition-all hover:-translate-y-1 shadow-2xl">
+
+
+          <Link to="/mens/hoodie">
+            <button  className="h-10 bg-amber-600 w-40 overflow-hidden">
+                       <div>mens hoodie</div>
+            </button>
+          </Link>
+        </div>
+        <div className="flex h-10 flex-col hover:transition-all hover:-translate-y-1 shadow-2xl">
+
+
+          <Link to="/mens/hoodie">
+            <button  className="h-10 bg-amber-600 w-40 overflow-hidden">
+                       <div>mens hoodie</div>
+            </button>
+          </Link>
+        </div>
+        <div className="flex h-10 flex-col hover:transition-all hover:-translate-y-1 shadow-2xl">
+
+
+          <Link to="/mens/hoodie">
+            <button  className="h-10 bg-amber-600 w-40 overflow-hidden">
+                       <div>mens hoodie</div>
+            </button>
+          </Link>
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ import { useEffect } from "react";
+import useProductStore from "./store/useProductStore";
+import useCartStore from "./useCartStore";
+import { Button } from "@/components/ui/button";
+const ProductList = () => {
+  const { products, fetchProducts, loading } = useProductStore();
+  const addToCart = useCartStore((state) => state.addToCart);
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  if (loading) return <p className="text-center">Loading products...</p>;
+
+  return (
+    <div className="grid grid-cols-4 gap-6 p-6">
+      {products.map((product) => (
+        <div key={product.id} className="border p-4 rounded">
+          <img
+            src={product.thumbnail}
+            alt={product.title}
+            className="h-40 mx-auto object-cover"
+          />
+          <h2 className="font-semibold mt-2">{product.title}</h2>
+          <p>₹ {product.price}</p>
+
+          <Button
+            onClick={() => addToCart(product)}
+            className="mt-2 w-full bg-black text-white py-2 rounded"
+          >
+            Add to Cart
+          </Button>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default ProductList;
+
+
+
+
+<div className="flex  gap-20 min-w-full">
+          <div><h2 className="font-light mt-2 max-w-50">{product.title}</h2></div>
+          <div className=" items-center  place-items-end">  <p>₹ {product.price}</p>
+          <div> available</div></div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+            <div >
+           <h1>personal information</h1>
+           <div className="flex ">
+           <input type="text"
+           placeholder="First name"
+           /> 
+           <input type="text"
+           placeholder="Last name" 
+           />
+           </div>
+
+           <div>
+          <input type="numbers"
+           placeholder="phone no" 
+           />
+           <input type="email"
+           placeholder="Email" 
+           />
+           </div>
+           
+           </div>
+           
+           
+            <div>
+            <h1>Shipping Information</h1>
+           <div >
+           <div className="flex ">
+           <input type="text"
+           placeholder="First name"
+           /> 
+           <input type="text"
+           placeholder="Last name" 
+           />
+           </div>
+          
+           <div>
+          <input type="numbers"
+           placeholder="phone no" 
+           />
+           <input type="email"
+           placeholder="Email" 
+           />
+           </div>
+           
+           </div>
+           </div>
+
+           <div>
+            <h1>delivery</h1>
+            
+
+          </div>
+          <div className="bg-amber-700">
+            <RadioGroup defaultValue="comfortable">
+                <div className="flex items-center gap-3  border-b-2 ">
+                  <RadioGroupItem value="standard delivery" id="r1"  />
+                  <Label htmlFor="r1"> Standard delivery
+                    <p className="font-extralight text-gray-400 text-sm">within 5-7 days </p>
+                  </Label>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <RadioGroupItem value="fast delivery" id="r2" />
+                  <Label htmlFor="r2">Fast delivery
+                    <p className="font-extralight text-gray-400 text-sm" >within 3days </p>
+                  </Label>
+                </div>
+              </RadioGroup>
+          </div>
+
+
+
+          </div>
