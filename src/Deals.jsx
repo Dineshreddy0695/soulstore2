@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Discount from "./discount";
+import Discount from "./Discount";
 
 const Deals=()=>{
       const [showDiscount, setShowDiscount] = useState(false);
