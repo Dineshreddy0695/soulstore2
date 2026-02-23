@@ -1,4 +1,4 @@
-import CartItems from "./cartitems"
+import CartItems from "./CartItems";    
 
 
 const Footer=()=>{
