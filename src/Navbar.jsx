@@ -49,7 +49,7 @@ function Navbar({ search, setSearch }) {
       <Link to={"/"} onClick={closeCart}>
         <div className="flex items-center">
           <img
-            src="/logo.png"
+            src="https://cdn.dribbble.com/userupload/32177507/file/original-b981c274b20841742f9cd2f61ac5f8af.jpg?resize=1504x1128&vertical=center"
             alt="S"
             className="h-20 w-auto -mr-8"
           />
