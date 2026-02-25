@@ -21,17 +21,17 @@ const ProductList = ({ search = "" }) => {
     );
   }
 
-  // ✅ Ensure products is always an array
+
   const safeProducts = Array.isArray(products) ? products : [];
 
-  // ✅ Filter based on dummyjson structure
+
   const filteredProducts = safeProducts.filter((product) =>
     product.title
       ?.toLowerCase()
       .includes(search.toLowerCase())
   );
 
-  // ✅ Apply See All after filtering
+
   const visibleProducts = showAll
     ? filteredProducts
     : filteredProducts.slice(0, 4);
