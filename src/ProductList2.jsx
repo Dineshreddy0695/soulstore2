@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useCartStore from "./useCartStore";
 
-const ProductList2 = () => {
+const ProductList2 = ({ search }) => {
   const [showAll, setShowAll] = useState(false);
 
   const cart = useCartStore((state) => state.cart);
@@ -43,27 +43,19 @@ const ProductList2 = () => {
       thumbnail:
         "https://image.hm.com/assets/hm/55/44/5544e3f1234567890.jpg",
     },
-     {
-      id: 4,
-      title: "Slim Jeans",
-      price: 1199,
-      thumbnail:
-        "https://image.hm.com/assets/hm/39/f5/39f50424ff1a64c55510f22f1426d3a3b684c93f.jpg",
-    }, {
-      id: 4,
-      title: "Slim Jeans",
-      price: 1199,
-      thumbnail:
-        "https://image.hm.com/assets/hm/39/f5/39f50424ff1a64c55510f22f1426d3a3b684c93f.jpg",
-    },
   ];
 
-  const visibleProducts = showAll ? products : products.slice(0, 4);
+
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(search?.toLowerCase() || "")
+  );
+
+  const visibleProducts = showAll
+    ? filteredProducts
+    : filteredProducts.slice(0, 4);
 
   return (
     <section className="min-w-9xl px-6 py-1">
-
-      {/* Header */}
       <div className="flex items-center justify-between mb-10">
         <h2 className="text-3xl font-bold tracking-tight">
           Featured Collection
@@ -77,9 +69,7 @@ const ProductList2 = () => {
         </button>
       </div>
 
-      {/* Grid */}
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
-
         {visibleProducts.map((product) => {
           const isAdded = cart.some(
             (item) => Number(item.id) === Number(product.id)
@@ -90,7 +80,6 @@ const ProductList2 = () => {
               key={product.id}
               className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300"
             >
-              {/* Image */}
               <div className="overflow-hidden rounded-t-2xl">
                 <img
                   src={product.thumbnail}
@@ -99,15 +88,12 @@ const ProductList2 = () => {
                 />
               </div>
 
-              {/* Content */}
               <div className="p-5 space-y-3">
-
                 <h3 className="font-semibold text-lg line-clamp-1">
                   {product.title}
                 </h3>
 
                 <div className="flex items-center justify-between">
-
                   <span className="text-xl font-bold">
                     ₹ {product.price}
                   </span>
@@ -120,21 +106,18 @@ const ProductList2 = () => {
                     className={`px-4 py-2 text-sm rounded-full transition
                       ${
                         isAdded
-                          ? "bg-white text-black  border cursor-not-allowed"
+                          ? "bg-white text-black border cursor-not-allowed"
                           : "bg-black text-white hover:bg-gray-800"
                       }
                     `}
                   >
                     {isAdded ? "Added ✓" : "Add"}
                   </button>
-
                 </div>
-
               </div>
             </div>
           );
         })}
-
       </div>
     </section>
   );
