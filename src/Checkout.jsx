@@ -15,7 +15,7 @@ export default function CheckoutPage() {
   const navigate = useNavigate();
   const { cart, clearCart } = useCartStore();
 
-  // 🔥 Shipping form state
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -27,7 +27,7 @@ export default function CheckoutPage() {
     pincode: "",
   });
 
-  // 🔥 Payment method state
+
   const [paymentMethod, setPaymentMethod] = useState("cod");
 
   const subtotal = cart.reduce(
@@ -160,7 +160,7 @@ export default function CheckoutPage() {
               </CardContent>
             </Card>
 
-            {/* Payment Method */}
+
             <Card className="rounded-2xl">
               <CardHeader>
                 <CardTitle className="text-xl">Payment Method</CardTitle>
@@ -197,7 +197,7 @@ export default function CheckoutPage() {
             </Card>
           </div>
 
-          {/* RIGHT SIDE */}
+
           <div className="space-y-6">
             <Card className="rounded-2xl">
               <CardHeader>
