@@ -1,17 +1,98 @@
-# React + Vite
+🛒 SoulStore
+Full Stack MERN E-Commerce Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+💻 Source Code: https://github.com/Dineshreddy0695/soulstore
 
-Currently, two official plugins are available:
+📌 Concept
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A complete online shopping experience built using modern full-stack technologies.
 
-## React Compiler
+E-commerce platforms are complex systems involving frontend UI rendering, backend business logic, authentication, state management, and database operations.
+SoulStore simplifies this architecture using the MERN stack and demonstrates how scalable web applications are built in real-world production environments.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The goal of this project is to:
 
-## Expanding the ESLint configuration
+Simulate a real online shopping system
+Implement secure authentication
+Manage dynamic cart functionality
+Handle REST API communication
+Deploy both frontend and backend independently
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Soulstore
+
+🔐 Authentication System
+
+User registration with encrypted passwords.
+
+Login using credential verification.
+
+JWT token generation.
+
+Middleware-based route protection.
+
+Secure API communication.
+
+
+
+🛍️ Core Features
+
+User Registration
+
+Secure Login
+
+Logout
+
+Shopping Features
+
+Product Listing
+
+Product Details Page
+
+Add to Cart
+
+Remove from Cart
+
+Developer Features:
+
+RESTful API Structure
+
+Modular Backend Architecture
+
+Zustand Global State Management
+
+Production Deployment Ready
+
+
+📸 Screenshots
+🏠 Home Page
+
+(Add your homepage screenshot here)
+
+🛒 Cart Page
+
+(Add your cart screenshot here)
+
+🔐 Login Page
+
+(Add your login screenshot here)
+
+
+
+🛠️ Tech Stack
+
+Frontend: React.js, Tailwind CSS, Zustand
+
+Backend: Node.js, Express.js
+
+Database: MongoDB
+
+Authentication: JWT
+
+Deployment: Vercel & Render
+
+👨‍💻 Author
+
+VADDIREDDY Dineshreddy
+
+MERN Stack Developer
+
+Ananthapur, Andhra Pradesh
